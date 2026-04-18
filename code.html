@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 AI 助手</title>
+    <style>
+        /* 设置容器大小，让聊天框铺满屏幕或固定大小 */
+        #app {
+            width: 100%;
+            height: 100vh;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SDK 渲染的容器 -->
+    <div id="app"></div>
+
+    <script type="text/javascript">
+      var webSdkScript = document.createElement('script');
+      // 建议检查这个链接是否是最新版本
+      webSdkScript.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk/0.1.1-beta.1/dist/umd/index.js';
+      document.head.appendChild(webSdkScript);
+      
+      webSdkScript.onload = function () {
+        new CozeWebSDK.AppWebSDK({
+          "token": "pat_********", // ⚠️ 注意：这里替换成你真实的 PAT
+          "appId": "7630029363102089225",
+          "container": "#app",
+          "userInfo": {
+            "id": "unique_user_id", // 建议填入一个随机ID
+            "url": "",
+            "nickname": "访客"
+          }
+        });
+      }
+    </script>
+</body>
+</html>
