@@ -18,26 +18,23 @@
 </head>
 <body>
 
-    <!-- SDK 渲染的容器 -->
-    <div id="app"></div>
-
-    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
-<script>
-  new CozeWebSDK.WebChatClient({
-    config: {
-      bot_id: '7629971164194406450',
-    },
-    componentProps: {
-      title: 'Coze',
-    },
-    auth: {
-      type: 'token',
-      token: 'pat_7qhZ918UQ4RYyxqblBF0NGbkiub1XcEFAMpekxByzrnPC4qu9EVhP29EfUeUVZ31',
-      onRefreshToken: function () {
-        return 'pat_7qhZ918UQ4RYyxqblBF0NGbkiub1XcEFAMpekxByzrnPC4qu9EVhP29EfUeUVZ31'
+   <div id="app"></div>
+<script type="text/javascript">
+  var webSdkScript = document.createElement('script');
+  webSdkScript.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk/0.1.1-beta.1/dist/umd/index.js';
+  document.head.appendChild(webSdkScript);
+  webSdkScript.onload = function () {
+    new CozeWebSDK.AppWebSDK({
+      "token": "pat_7qhZ918UQ4RYyxqblBF0NGbkiub1XcEFAMpekxByzrnPC4qu9EVhP29EfUeUVZ31",
+      "appId": "7630029363102089225",
+      "container": "#app",
+      "userInfo": {
+        "id": "",
+        "url": "",
+        "nickname": "User"
       }
-    }
-  });
+    });
+  }
 </script>
 </body>
 </html>
